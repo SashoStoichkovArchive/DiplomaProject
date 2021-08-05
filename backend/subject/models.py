@@ -17,6 +17,8 @@ class Subject(UUIDModel):
         max_length=255, choices=Priority.choices, default=Priority.low
     )
 
+    hour_count = models.IntegerField(default=0)
+
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
