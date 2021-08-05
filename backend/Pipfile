@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 django = "*"
-psycopg2 = "*"
 mysqlclient = "*"
+django-environ = "*"
 
 [dev-packages]
 
