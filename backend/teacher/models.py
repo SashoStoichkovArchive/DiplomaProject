@@ -10,8 +10,11 @@ class Teacher(UUIDModel):
     phone = models.CharField(max_length=50)
     degree = models.CharField(max_length=50, null=True, blank=True)
 
+    def get_full_name(self):
+        return "{} {}".format(self.first_name, self.last_name)
+
     def __str__(self):
         if self.degree:
-            return "{} {} {}".format(self.degree, self.first_name, self.last_name)
+            return "{} {}".format(self.degree, self.get_full_name())
         else:
-            return "{} {}".format(self.first_name, self.last_name)
+            return self.get_full_name()
